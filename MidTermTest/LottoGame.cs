@@ -137,35 +137,28 @@ namespace MidTermTest
                 // add lottoNumber and appropriate spaces to the lottoNumberString variable
                 lottoNumberString += lottoNumber > 9 ? (lottoNumber + " ") : (lottoNumber + "  ");
             }
-           
-            return $"{lottoNumberString}";
-          
-                
-           
-
-            //if (ElementNumber == 6)
-            //{
-            //    return
-
-            //       $"Ticket 1: {lottoNumberString}\n"
-            //     + $"Ticket 2: {lottoNumberString}\n"
-            //     + $"Ticket 3: {lottoNumberString}\n"
-            //     + $"Ticket 4: {lottoNumberString}\n"
-            //     + $"Ticket 5: {lottoNumberString}\n"
-            //     + $"Ticket 6: {lottoNumberString}\n";
-            //}
-            //else
-            //{
-            //    return $"Ticket 1: {lottoNumberString}\n"
-            //     + $"Ticket 2: {lottoNumberString}\n"
-            //     + $"Ticket 3: {lottoNumberString}\n"
-            //     + $"Ticket 4: {lottoNumberString}\n"
-            //     + $"Ticket 5: {lottoNumberString}\n"
-            //     + $"Ticket 6: {lottoNumberString}\n"
-            //     + $"Ticket 7: {lottoNumberString}\n";
-            //}
-
-
+            // Displays tickets based on the ElementNumber property 
+            if (ElementNumber == 6)
+            {
+                return 
+                   $"Ticket 1: {lottoNumberString}\n"
+                 + $"Ticket 2: {lottoNumberString}\n"
+                 + $"Ticket 3: {lottoNumberString}\n"
+                 + $"Ticket 4: {lottoNumberString}\n"
+                 + $"Ticket 5: {lottoNumberString}\n"
+                 + $"Ticket 6: {lottoNumberString}\n";
+            }
+            else
+            {
+                return
+                   $"Ticket 1: {lottoNumberString}\n"
+                 + $"Ticket 2: {lottoNumberString}\n"
+                 + $"Ticket 3: {lottoNumberString}\n"
+                 + $"Ticket 4: {lottoNumberString}\n"
+                 + $"Ticket 5: {lottoNumberString}\n"
+                 + $"Ticket 6: {lottoNumberString}\n"
+                 + $"Ticket 7: {lottoNumberString}\n";
+            }
         }
 
 
