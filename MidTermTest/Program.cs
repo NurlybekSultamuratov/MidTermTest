@@ -3,7 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// Documentation:
+/// The Author's Name : Nurlybek
+/// Author's Student Number : 301103746
+/// Date Last Modified : 17.07.2020 17:08 p.m.
+/// Program Description: LottoGame creates random ticket numbers 
+/// and displays it in a form of a table.
+/// Tickets are displayed depending on the game a user chooses.
+/// Revision History :
+/// Used template and started working on 16.07.2020 at 15:00 p.m.
+/// Finished coding LottoGame.cs file on 16.07.2020 at 18.00 p.m.
+/// Created IGenerateLottoNumbers.cs file and added interface on 16.07.2020 19:00 p.m.
+/// Finished coding and included documentation for all features(methods,properties,fields) 
+/// and pushed it to GitHub on 17.07.2020 at approximately 20:00 p.m.
+/// </summary>
 namespace MidTermTest
 {
     /**
@@ -20,8 +34,6 @@ namespace MidTermTest
       //   Instantiate lottoMax object
         static LottoMax lottoMax = new LottoMax();
 
-
-
         /**
          * @static
          * @method Main
@@ -31,9 +43,7 @@ namespace MidTermTest
         {   
             // Call the Menu
             LottoMenu();
-        
         }
-
         /**
          * <summary>
          * This utility method creates a console menu that allows the user to choose

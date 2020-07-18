@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MidTermTest
@@ -107,12 +108,10 @@ namespace MidTermTest
         private void _build()
         {
             for (int i=1; i<SetSize; i++)
-            {
-                foreach(int num in NumberList)
-                {
-                    NumberList.Add(_random.Next(SetSize));
-                }
+            {     
+                    NumberList.Add((SetSize));
             }
+           
         }
         // OVERRIDEN METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -132,75 +131,46 @@ namespace MidTermTest
             string lottoNumberString = String.Empty;
 
             // for each lottoNumber in ElementList, loop...
-            foreach (int lottoNumber in ElementList)
-            {
-                // add lottoNumber and appropriate spaces to the lottoNumberString variable
-                lottoNumberString += lottoNumber > 9 ? (lottoNumber + " ") : (lottoNumber + "  ");
-            }
-            // Displays tickets based on the ElementNumber property 
-            if (ElementNumber == 6)
-            {
-                return 
-                   $"Ticket 1: {lottoNumberString}\n"
-                 + $"Ticket 2: {lottoNumberString}\n"
-                 + $"Ticket 3: {lottoNumberString}\n"
-                 + $"Ticket 4: {lottoNumberString}\n"
-                 + $"Ticket 5: {lottoNumberString}\n"
-                 + $"Ticket 6: {lottoNumberString}\n";
-            }
-            else
-            {
-                return
-                   $"Ticket 1: {lottoNumberString}\n"
-                 + $"Ticket 2: {lottoNumberString}\n"
-                 + $"Ticket 3: {lottoNumberString}\n"
-                 + $"Ticket 4: {lottoNumberString}\n"
-                 + $"Ticket 5: {lottoNumberString}\n"
-                 + $"Ticket 6: {lottoNumberString}\n"
-                 + $"Ticket 7: {lottoNumberString}\n";
-            }
-        }
+         
+                foreach (int lottoNumber in ElementList)
+                {
+                    // add lottoNumber and appropriate spaces to the lottoNumberString variable
+                    lottoNumberString += lottoNumber > 9 ? (lottoNumber + " ") : (lottoNumber + "  ");
 
+                }
+
+            // Displays tickets based on the ElementNumber property
+                return $"{lottoNumberString}";
+        }
 
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         // CREATE the public PickElements method here ----------------------------
         public void PickElements()
         {
+            // If number of elements is greater than 0, call Clear methods for ElementList
+            // and Numberlist properties and call build method to rebuild values
 
-            // If number of elements is greater than 0 > Call Clear methods and build method
-          
-            
-                if (ElementList.Count > 0)
-
-                {
-                    ElementList.Clear();
-                    NumberList.Clear();
-                    _build();
-                }
-            
-            for (int i = 0; i < ElementNumber; i++) 
+            if (ElementList.Count > 0)
+            {
+                ElementList.Clear();
+                NumberList.Clear();
+                _build();
+            }
+            // Picks and removes random numbers from ElementList ElementNumber times
+            // Sorts ElementList afterwards
+            for (int i = 0; i < ElementNumber; i++)
             {
                 int integer;
-
-                do
-                {
-                    integer = _random.Next(SetSize);
+               
+                    integer = _random.Next(NumberList.Count);
                     ElementList.Remove(integer);
                     ElementList.Add(integer);
-
-
-                }
-                while (NumberList.Contains(integer));
-
+           
             }
 
             ElementList.Sort();
-
+            
         }
-
-
-
-
     }
 }
