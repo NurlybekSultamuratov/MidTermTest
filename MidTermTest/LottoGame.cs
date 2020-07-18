@@ -104,7 +104,7 @@ namespace MidTermTest
 
         // CREATE the private _build method here -----------------------------------
         // _build method uses foreach loop to read values from NumberList
-        //  and adds them randomly to the same list Set size times ,which is 49 , in a for loop
+        //  and adds them to the same list Set size times ,which is 49 , in a for loop
         private void _build()
         {
             for (int i=1; i<SetSize; i++)
